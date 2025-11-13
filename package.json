@@ -1,0 +1,19 @@
+{
+  "name": "chat-bot",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@azure-rest/ai-inference": "latest",
+    "@azure/core-auth": "latest",
+    "@azure/core-sse": "latest"
+  },
+  "devDependencies": {
+    "vite": "^5.0.8"
+  }
+}

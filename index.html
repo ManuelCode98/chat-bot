@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatBot Profesional</title>
+  
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h2>💬 ChatBot Asistente</h2>
+    </header>
+
+    <main class="chat-messages" id="chat-messages">
+      <!-- Aqui agregamos los mensajes dinámicamente -->
+      <div class="message bot">
+        ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+      </div>
+
+    </main>
+
+    <form class="chat-input-container">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Escribe tu pregunta..."
+        autocomplete="off"
+      />
+      <button id="send-btn">Enviar</button>
+    </form>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
