@@ -1,4 +1,4 @@
-
+import { OpenRouter } from "@openrouter/sdk";
 
 const token = import.meta.env.VITE_GITHUB_TOKEN;
 
@@ -26,16 +26,17 @@ export const modelIA = ()=>{
 
 };
 
-const askTheApi = ( question, selectChatMessages )=>{ 
+const askTheApi = async( question, selectChatMessages )=>{ 
 
-    fetch("https://openrouter.ai/api/v1/chat/completions", {
+
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${token}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      "model": "moonshotai/kimi-k2:free",
+      "model": "arcee-ai/trinity-mini:free",
       "messages": [
         {
           "role": "user",
@@ -44,39 +45,11 @@ const askTheApi = ( question, selectChatMessages )=>{
       ]
     })
   })
-  .then( res => res.json() )
-  .then( data => {
+  const data = await res.json()
 
-    const response = data.choices[0].message.content;
+  const message = data.choices[0].message.content;
 
-    selectChatMessages.innerHTML += `<div class="message bot">${response}<div>`
-  })
-
+  selectChatMessages.innerHTML += `<div class="message bot">${message}<div>`
+  
 };
 
-
-
-
-
-
-
-
-
-//  fetch("https://openrouter.ai/api/v1/chat/completions", {
-//     method: "POST",
-//     headers: {
-//       "Authorization": `Bearer ${}`,
-//       "HTTP-Referer": "<YOUR_SITE_URL>", // Optional. Site URL for rankings on openrouter.ai.
-//       "X-Title": "<YOUR_SITE_NAME>", // Optional. Site title for rankings on openrouter.ai.
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({
-//       "model": "moonshotai/kimi-k2:free",
-//       "messages": [
-//         {
-//           "role": "user",
-//           "content": `${}`
-//         }
-//       ]
-//     })
-//   })

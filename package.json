@@ -11,7 +11,8 @@
   "dependencies": {
     "@azure-rest/ai-inference": "latest",
     "@azure/core-auth": "latest",
-    "@azure/core-sse": "latest"
+    "@azure/core-sse": "latest",
+    "@openrouter/sdk": "^0.3.11"
   },
   "devDependencies": {
     "vite": "^5.0.8"
